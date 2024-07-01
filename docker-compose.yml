@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  my-django-app:
+    build: .  # Build the image from the current directory (.)
+    ports:
+      - "8000:8000"  # Map container port 8000 to host port 8000
+    volumes:
+      - .:/app  # Mount the current directory as /app inside the container (for development)
