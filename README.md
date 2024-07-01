@@ -20,11 +20,17 @@ This will activate the virtual environment, and your terminal should indicate th
 
 ### Install Dependencies
 Install the dependencies listed in `requirements.txt` using pip:
-```pip install -r requirements.txt```
-This command tells pip to install all the packages listed in `requirements.txt`.
+```
+pip install -r requirements.txt
+```
 
 Running the App
 ---------------
+
+Move to the directory that contains the manage.py file
+```
+cd src/social_network
+```
 
 ### Create Super User
 Run the following command to create super user for the app:

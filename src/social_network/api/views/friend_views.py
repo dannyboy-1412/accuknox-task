@@ -18,6 +18,15 @@ class CustomRateThrottle(UserRateThrottle):
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
 def list_friends(request):
+  """
+    Display list of friends.
+
+    Args:
+        request (django.http.HttpRequest): The HTTP request object.
+
+    Returns:
+        django.http.HttpResponse: A response displaying the list of friends.
+    """
   user = request.user
   pending = request.GET.get('pending', False)
 
@@ -55,6 +64,17 @@ def list_friends(request):
 @throttle_classes([CustomRateThrottle])
 @permission_classes([IsAuthenticated])
 def send_friend_request(request, pk):
+  """
+    Send a friend request.
+
+    Args:
+        request (django.http.HttpRequest): The HTTP request object.
+        pk (int): The primary key of the user making the friend request.
+        
+    Returns:
+        django.http.HttpResponse: A response indicating whether the friend request has been sent
+    """
+  
   to_user = User.objects.get(pk=pk)
   from_user = request.user
 
@@ -78,6 +98,17 @@ def send_friend_request(request, pk):
 @api_view(['PATCH'])
 @permission_classes([IsAuthenticated])
 def respond_friend_request(request, pk, is_accept):
+  """
+    Respond to a friend request.
+
+    Args:
+        request (django.http.HttpRequest): The HTTP request object.
+        pk (int): The primary key of the user making the friend request.
+        is_accept (bool): Whether to accept or decline the friend request (1 to accept).
+
+    Returns:
+        django.http.HttpResponse: A response indicating whether the friend request was accepted or declined.
+    """
   if not isinstance(is_accept, int) and 0 <= is_accept < 2:
     return Response({'error': 'Invalid Input Action'}, status=status.HTTP_400_BAD_REQUEST)
   
