@@ -42,7 +42,7 @@ def search_users(request):
     paginator = Paginator(users, 10)  # Paginate results with 10 per page
     page = request.GET.get('page')  # Allow pagination control through page parameter
 
-    if page > paginator.num_pages:
+    if int(page) > paginator.num_pages:
         return Response({'error': 'Invalid Input'}, status=status.HTTP_400_BAD_REQUEST)
 
     try:
