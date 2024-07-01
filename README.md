@@ -32,18 +32,19 @@ Move to the directory that contains the manage.py file
 cd src/social_network
 ```
 
-### Create Super User
-Run the following command to create super user for the app:
-```
-python manage.py createsuperuser
-```
-
 ### Run Migrations
 Run the following command to apply migrations:
 ```
 python manage.py makemigrations
 python manage.py migrate
 ```
+
+### Create Super User
+Run the following command to create super user for the app:
+```
+python manage.py createsuperuser
+```
+
 ### Start Development Server
 Start the development server using the following command:
 ```
@@ -51,8 +52,15 @@ python manage.py runserver
 ```
 This will start a development server at `http://localhost:8000/`. You can access your app by visiting this URL in your web browser.
 
-Run Docker Compose
-If you're using Docker, you can run the following command in the root directory to start the containers: docker-compose up -d This will start the containers in detached mode. You can then access your app by visiting http://localhost:8000/ in your web browser.
+### Run Docker Compose
+If you're using Docker, you can run the following command in the root directory instead of starting the dev server using the command mentioned above
+to start the containers: 
+```
+docker-compose up -d 
+```
+
+This will start the containers in detached mode. You can then access your app by visiting http://localhost:8000/ in your web browser. Only run the docker commands after creating the super user and running migrations.
+
 
 
 Other Commands
