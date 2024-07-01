@@ -51,6 +51,10 @@ python manage.py runserver
 ```
 This will start a development server at `http://localhost:8000/`. You can access your app by visiting this URL in your web browser.
 
+Run Docker Compose
+If you're using Docker, you can run the following command in the root directory to start the containers: docker-compose up -d This will start the containers in detached mode. You can then access your app by visiting http://localhost:8000/ in your web browser.
+
+
 Other Commands
 ---------------
 
