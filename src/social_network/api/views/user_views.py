@@ -40,9 +40,9 @@ def search_users(request):
     users = User.objects.filter(first_name__icontains=search_term)
 
     paginator = Paginator(users, 10)  # Paginate results with 10 per page
-    page = request.GET.get('page')  # Allow pagination control through page parameter
+    page = int(request.GET.get('page'))  # Allow pagination control through page parameter
 
-    if int(page) > paginator.num_pages:
+    if page > paginator.num_pages or page < 1:
         return Response({'error': 'Invalid Input'}, status=status.HTTP_400_BAD_REQUEST)
 
     try:
