@@ -1,2 +1,4 @@
 venv
 src/social_network/db.sqlite3
+__pycache__/
+migrations/
