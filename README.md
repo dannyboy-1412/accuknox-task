@@ -56,6 +56,10 @@ This will start a development server at `http://localhost:8000/`. You can access
 If you're using Docker, you can run the following command in the root directory instead of starting the dev server using the command mentioned above
 to start the containers: 
 ```
+docker-compose build 
+```
+
+```
 docker-compose up -d 
 ```
 
