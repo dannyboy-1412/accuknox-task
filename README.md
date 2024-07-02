@@ -50,7 +50,7 @@ Start the development server using the following command:
 ```
 python manage.py runserver
 ```
-This will start a development server at `http://localhost:8000/`. You can access your app by visiting this URL in your web browser.
+This will start a development server at `http://localhost:8000/`. You can access the api's using postman or through the browser
 
 ### Run Docker Compose
 If you're using Docker, you can run the following command in the root directory instead of starting the dev server using the command mentioned above
